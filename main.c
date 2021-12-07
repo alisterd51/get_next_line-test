@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
-
+/*
 int		main(int ac, char **av)
 {
 	int		fd;
@@ -30,6 +30,25 @@ int		main(int ac, char **av)
 	}
 	printf("%d: %s\n", ret, line);
 	free(line);
+	close(fd);
+	return (0);
+}
+*/
+int	main(int ac, char **av)
+{
+	int		fd;
+	char	*line;
+
+	if (ac == 1)
+		fd = 0;
+	else
+		fd = open(av[1], O_RDONLY);
+	line = get_next_line(fd);
+	while (line != NULL)
+	{
+		printf("%s\n", line);
+		free(line);
+	}
 	close(fd);
 	return (0);
 }
