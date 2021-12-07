@@ -6,7 +6,7 @@
 /*   By: anclarma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:02:40 by anclarma          #+#    #+#             */
-/*   Updated: 2019/11/25 14:08:55 by anclarma         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:58:38 by anclarma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int		main(int ac, char **av)
 	return (0);
 }
 */
-
 int	main(int ac, char **av)
 {
 	int		fd;
@@ -50,6 +49,7 @@ int	main(int ac, char **av)
 	{
 		printf("%s\n", line);
 		free(line);
+		line = get_next_line(fd);
 	}
 	close(fd);
 	return (0);
