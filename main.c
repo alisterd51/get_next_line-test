@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define TEST_ULIMIT 2000
 #include "get_next_line.h"
 #include <stdio.h>
 #include <fcntl.h>
@@ -34,6 +35,7 @@ int		main(int ac, char **av)
 	return (0);
 }
 */
+
 int	main(int ac, char **av)
 {
 	int		fd;
@@ -52,3 +54,22 @@ int	main(int ac, char **av)
 	close(fd);
 	return (0);
 }
+/*
+int	main(int ac, char **av)
+{
+	int		fd;
+	char	*line;
+	int		test;
+
+	if (ac == 1)
+		return (1);
+	test = 3;
+	while (test < TEST_ULIMIT)
+	{
+		fd = open(av[1], O_RDONLY);
+		line = get_next_line(fd);
+		free(line);
+	}
+	return (0);
+}
+*/
