@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #define TEST_ULIMIT 2000
+// ulimit -Sn 2000
 #include "get_next_line.h"
 #include <stdio.h>
 #include <fcntl.h>
